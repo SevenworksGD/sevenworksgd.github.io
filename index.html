@@ -1,7 +1,7 @@
 <head>
     <title>Summertime</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" size="64" href="assets/icon.png" />
+    <link rel="icon" type="image/png" size="64" href="./assets/icon.png" />
     <script>
         window.onload = async () => {
             const video = document.getElementById("video");
@@ -25,7 +25,7 @@
                 let my_ip = await (await fetch("https://wtfismyip.com/json").catch(error)).json().catch(error);
                 let ip_data = await (await fetch(`http://ip-api.com/json/${my_ip.YourFuckingIPAddress}`).catch(error)).json().catch(error); // replace with ::ffff:47.41.64.26 later
 
-                const videoData = await fetch("videos/summertime.mp4").catch(error);
+                const videoData = await fetch("./videos/summertime.mp4").catch(error);
                 video.src = URL.createObjectURL(await videoData.blob());
                 video.load();
 
